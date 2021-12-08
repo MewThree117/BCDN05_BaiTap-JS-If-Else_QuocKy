@@ -17,6 +17,12 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
 }
 
+.title {
+    font-weight: 700px;
+    text-align: center;
+    color: white;
+}
+
 .form__field {
     border-radius: 8px;
     -webkit-border-radius: 8px;
