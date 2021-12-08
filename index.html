@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập JS_3</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="form__field w-75 mx-auto">
+            <div class="row">
+                <div id="btns" class="col__left col-2 p-4">
+                    <button onclick="bai1()" class="form__btn active w-100">Bài 1</button>
+                    <button onclick="bai2()" class="form__btn w-100 mt-2">Bài 2</button>
+                    <button onclick="bai3()" class="form__btn w-100 mt-2">Bài 3</button>
+                    <button onclick="bai4()" class="form__btn w-100 mt-2">Bài 4</button>
+                    <button onclick="bai5()" class="form__btn w-100 mt-2">Bài 5</button>
+                    <button onclick="bai6()" class="form__btn w-100 mt-2">Bài 6</button>
+                    <button onclick="bai7()" class="form__btn w-100 mt-2">Bài 7</button>
+                    <button onclick="bai8()" class="form__btn w-100 mt-2">Bài 8</button>
+                </div>
+                <div class="col__right col-10 p-4">
+                    <div class="form__answer" id="lesson__1">
+                        <h2 class="mb-4">Xuất 3 số theo thứ tự tăng dần.</h2>
+                        <div class="inp__list mb-4">
+                            <div class="inp__item">
+                                <input type="text" id="num1" class="form__input" placeholder="Nhập số thứ 1">
+                            </div>
+                            <div class="inp__item">
+                                <input type="text" id="num2" class="form__input" placeholder="Nhập số thứ 2">
+                            </div>
+                            <div class="inp__item">
+                                <input type="text" id="num3" class="form__input" placeholder="Nhập số thứ 3">
+                            </div>
+                        </div>
+                        <button onclick="sapXep3So()" class="col__right-btn btn btn-primary mb-3">Sắp Xếp</button>
+                        <div class="form__result">
+                            <span>Kết quả: </span>
+                            <p id="txt__result"></p>
+                        </div>
+                    </div>
+                    <div class="form__answer" id="lesson__2">
+                        <h2 class="mb-4">Chương trình chào hỏi.</h2>
+                        <div class="dropdown__wrap">
+                            <select id="yourChoose" class="dropdown__list">
+                                <option value="">Chọn thành viên</option>
+                                <option value="B">Bố</option>
+                                <option value="M">Mẹ</option>
+                                <option value="A">Anh Trai</option>
+                                <option value="E">Em Gái</option>
+                            </select>
+                            <button onclick="sendTo()" class="col__right-btn btn btn-primary ml-4">Gửi lời chào</button>
+                        </div>
+                        <div class="form__result mt-4">
+                            <span>Kết quả: </span>
+                            <p id="txt__sendTo"></p>
+                        </div>
+                    </div>
+                    <div class="form__answer" id="lesson__3">
+                        <h2 class="mb-4">Đếm số chẵn lẻ.</h2>
+                        <div class="inp__list mb-4">
+                            <div class="inp__item">
+                                <input type="text" id="soThu1" class="form__input" placeholder="Nhập số thứ 1">
+                            </div>
+                            <div class="inp__item">
+                                <input type="text" id="soThu2" class="form__input" placeholder="Nhập số thứ 2">
+                            </div>
+                            <div class="inp__item">
+                                <input type="text" id="soThu3" class="form__input" placeholder="Nhập số thứ 3">
+                            </div>
+                        </div>
+                        <button onclick="timChanLe()" class="col__right-btn btn btn-primary mb-3">Đếm</button>
+                        <div class="form__result">
+                            <span>Kết quả: </span>
+                            <p id="txt__chanLe"></p>
+                        </div>
+                    </div>
+                    <div class="form__answer" id="lesson__4">
+                        <h2 class="mb-4">Đoán hình tam giác.</h2>
+                        <div class="inp__list mb-4">
+                            <div class="inp__item">
+                                <input type="text" id="canh1" class="form__input" placeholder="Nhập độ dài cạnh 1">
+                            </div>
+                            <div class="inp__item">
+                                <input type="text" id="canh2" class="form__input" placeholder="Nhập độ dài cạnh 2">
+                            </div>
+                            <div class="inp__item">
+                                <input type="text" id="canh3" class="form__input" placeholder="Nhập độ dài cạnh 3">
+                            </div>
+                        </div>
+                        <button onclick="doanHinh()" class="col__right-btn btn btn-primary mb-3">Dự đoán</button>
+                        <div class="form__result">
+                            <span>Kết quả: </span>
+                            <p id="txt__doanHinh"></p>
+                        </div>
+                    </div>
+                    <div class="form__answer" id="lesson__5">
+                        <h2 class="mb-4">Tính ngày tháng năm.</h2>
+                        <div class="inp__list mb-4">
+                            <div class="inp__item">
+                                <input type="number" id="ngay" class="form__input" placeholder="Nhập ngày">
+                            </div>
+                            <div class="inp__item">
+                                <input type="number" id="thang" class="form__input" placeholder="Nhập tháng">
+                            </div>
+                            <div class="inp__item">
+                                <input type="number" id="nam" class="form__input" placeholder="Nhập năm">
+                            </div>
+                        </div>
+                        <button onclick="ngayHomQua()" class="col__right-btn btn btn-primary mb-3 mr-5">Ngày hôm qua</button>
+                        <button onclick="ngayMai()" class="col__right-btn btn btn-primary mb-3">Ngày mai</button>
+                        <div class="form__result">
+                            <span>Kết quả: </span>
+                            <p id="txt__ngayThangNam"></p>
+                        </div>
+                    </div>
+                    <div class="form__answer" id="lesson__6">
+                        <h2 class="mb-4">Tính ngày tháng năm.</h2>
+                        <div class="inp__list mb-4">
+                            <div class="inp__item">
+                                <input type="number" id="month" class="form__input" placeholder="Nhập tháng">
+                            </div>
+                            <div class="inp__item">
+                                <input type="number" id="year" class="form__input" placeholder="Nhập năm">
+                            </div>
+                            <button onclick="tinhNgay()" class="col__right-btn btn btn-primary mx-3">Tính ngày</button>
+                        </div>
+                        <div class="form__result">
+                            <span>Kết quả: </span>
+                            <p id="txt__ThangNam"></p>
+                        </div>
+                    </div>
+                    <div class="form__answer" id="lesson__7">
+                        <h2 class="mb-4">Đọc số.</h2>
+                        <div class="inp__list mb-4">
+                            <div class="mx-3">
+                                <input type="number" id="soNhapVao" class="form__input" placeholder="Nhập số có 3 chữ số">
+                            </div>
+                            <button onclick="docSo()" class="col__right-btn btn btn-primary mx-3">Đọc số</button>
+                        </div>
+                        <div class="form__result">
+                            <span>Kết quả: </span>
+                            <p id="txt__docSo"></p>
+                        </div>
+                    </div>
+                    <div class="form__answer" id="lesson__8">
+                        <h2 class="mb-4">Tìm sinh viên xa trường nhất.</h2>
+                        <p class="lesson8__label my-2">Sinh viên 1</p>
+                        <div class="inp__list mb-2">
+                            <div class="inp__item">
+                                <input type="text" id="student1__name" class="form__input" placeholder="Nhập tên">
+                            </div>
+                            <div class="inp__item">
+                                <input type="text" id="student1__x" class="form__input" placeholder="Nhập tọa độ x">
+                            </div>
+                            <div class="inp__item">
+                                <input type="text" id="student1__y" class="form__input" placeholder="Nhập tọa độ y">
+                            </div>
+                        </div>
+                        <p class="lesson8__label my-2">Sinh viên 2</p>
+                        <div class="inp__list mb-2">
+                            <div class="inp__item">
+                                <input type="text" id="student2__name" class="form__input" placeholder="Nhập tên">
+                            </div>
+                            <div class="inp__item">
+                                <input type="text" id="student2__x" class="form__input" placeholder="Nhập tọa độ x">
+                            </div>
+                            <div class="inp__item">
+                                <input type="text" id="student2__y" class="form__input" placeholder="Nhập tọa độ y">
+                            </div>
+                        </div>
+                        <p class="lesson8__label my-2">Sinh viên 3</p>
+                        <div class="inp__list mb-2">
+                            <div class="inp__item">
+                                <input type="text" id="student3__name" class="form__input" placeholder="Nhập tên">
+                            </div>
+                            <div class="inp__item">
+                                <input type="text" id="student3__x" class="form__input" placeholder="Nhập tọa độ x">
+                            </div>
+                            <div class="inp__item">
+                                <input type="text" id="student3__y" class="form__input" placeholder="Nhập tọa độ y">
+                            </div>
+                        </div>
+                        <p class="lesson8__label my-2">Trường học</p>
+                        <div class="school inp__list mb-4">
+                            <div class="inp__item">
+                                <input type="text" id="school__x" class="form__input" placeholder="Nhập tọa độ x">
+                            </div>
+                            <div class="inp__item">
+                                <input type="text" id="school__y" class="form__input" placeholder="Nhập tọa độ y">
+                            </div>
+                            <button onclick="timSinhVien()" class="col__right-btn btn btn-primary">Tìm</button>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="form__result">
+                            <span>Kết quả: </span>
+                            <p id="txt__sinhVien"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var header = document.getElementById("btns");
+        var btns = header.getElementsByClassName("form__btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+
+    <!-- JS BS4 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <!-- Main JS -->
+    <script src="./JS/bai1.js"></script>
+    <script src="./JS/bai2.js"></script>
+    <script src="./JS/bai3.js"></script>
+    <script src="./JS/bai4.js"></script>
+    <script src="./JS/bai5.js"></script>
+    <script src="./JS/bai6.js"></script>
+    <script src="./JS/bai7.js"></script>
+    <script src="./JS/bai8.js"></script>
+</body>
+</html>
